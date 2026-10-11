@@ -1,18 +1,8 @@
-# Use an official lightweight Python image
-FROM python:3.10-slim
-
-# Set the working directory inside the container
+FROM python:3.12-slim
 WORKDIR /app
-
-# Copy dependency specifications and install them
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy the rest of your repository code into the container
-COPY . .
-
-# Expose the port the app runs on
+COPY src/ ./src
+COPY models/ ./models
 EXPOSE 5000
-
-# Command to run the application using Gunicorn production server
-CMD ["gunicorn", "--bind", "0.0.0.0:5000", "app:app"]
+CMD ["python", "src/api.py"]

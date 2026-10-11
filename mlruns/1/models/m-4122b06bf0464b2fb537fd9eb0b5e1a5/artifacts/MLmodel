@@ -1,0 +1,24 @@
+artifact_path: file:C:/Users/HP/Desktop/pc/personel/wallet/mlruns/1/models/m-4122b06bf0464b2fb537fd9eb0b5e1a5/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.13.5
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - sklearn.tree._tree.Tree
+mlflow_version: 3.17.0
+model_id: m-4122b06bf0464b2fb537fd9eb0b5e1a5
+model_size_bytes: 1826406
+model_uuid: m-4122b06bf0464b2fb537fd9eb0b5e1a5
+prompts: null
+run_id: 241acc5472024a0c9ada0ebd8ff5620e
+utc_time_created: '2026-10-11 22:20:33.229587'
