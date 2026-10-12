@@ -1,8 +1,6 @@
 from flask import Flask, send_from_directory
 import os
-import numpy as np
-from sklearn.datasets import make_classification
-from sklearn.linear_model import SGDClassifier
+
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
@@ -16,7 +14,7 @@ def train_volatile_model():
     # 3. Train a classifier using stochastic gradient descent randomness
     model = SGDClassifier(loss="log_loss")
     model.fit(X_train, y_train)
-     grghdfh
+    
     #bonjure
     # 4. Evaluate performance
     predictions = model.predict(X_test)
