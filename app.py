@@ -6,6 +6,7 @@ from sklearn.linear_model import SGDClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import accuracy_score
 
+def train_volatile_model():
     # 1. Generate synthetic financial/transaction data without a fixed seed
     X, y = make_classification(n_samples=500, n_features=5, random_state=None)
     
@@ -15,7 +16,7 @@ from sklearn.metrics import accuracy_score
     # 3. Train a classifier using stochastic gradient descent randomness
     model = SGDClassifier(loss="log_loss")
     model.fit(X_train, y_train)
-     grghdfh
+    
     #bonjure
     # 4. Evaluate performance
     predictions = model.predict(X_test)
