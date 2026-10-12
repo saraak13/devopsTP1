@@ -25,7 +25,7 @@ from sklearn.metrics import accuracy_score
     return accuracy
 
 if __name__ == "__main__":
-    train_volatile_model()hvvjhg
+    train_volatile_model()
 
 app = Flask(__name__, static_url_path='', static_folder='.')
 

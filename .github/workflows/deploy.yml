@@ -14,10 +14,22 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Execute project tests
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
         run: |
-          echo "Executing project tests..."
-          # Replace this command with your actual test command
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest
+
+      - name: Check Python syntax
+        run: python -m compileall -q .
+
+      - name: Run application tests
+        run: pytest -v
 
   build:
     name: Build Project
@@ -28,10 +40,19 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Build project
-        run: |
-          echo "Building project..."
-          # Replace this command with your actual build command
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate Python files
+        run: python -m compileall -q .
+
+      - name: Validate Dockerfile
+        run: test -f Dockerfile
 
   docker:
     name: Build and Push Docker Image
