@@ -17,6 +17,7 @@ def train_volatile_model():
     model = SGDClassifier(loss="log_loss")
     model.fit(X_train, y_train)
     
+    #bonjure
     # 4. Evaluate performance
     predictions = model.predict(X_test)
     accuracy = accuracy_score(y_test, predictions)
